@@ -1,0 +1,10 @@
+
+.navbar {background-color: #fff!important;  box-shadow: 0 3px 6px 0 rgba(0,0,0,.2); margin-bottom: 20px;}
+.navBarHome{width: 100%; }
+.navbar-nav{width: 90%; display: flex; justify-content: center; align-items: center;}
+.navbar img{height: 60px; width: 190px; margin: auto auto;}
+
+.navtxt{color: rgb(4, 121, 121)!important; font-weight: 500;}
+.navtxt:hover {color: rgb(4, 88, 88)!important; font-weight: 700;}
+
+.menuTamanho{width: 220px!important;}
