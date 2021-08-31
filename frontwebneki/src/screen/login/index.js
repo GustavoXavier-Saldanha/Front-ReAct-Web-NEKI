@@ -25,7 +25,7 @@ const LogIn = ({ onLogin }) => {
         http.post('login', usuario)
             .then(response => {
 
-               
+
                 console.log(response.data);
                 localStorage.setItem('idUsuario', response.data.agente.id)
                 localStorage.setItem('email', response.data.email)
@@ -48,6 +48,21 @@ const LogIn = ({ onLogin }) => {
     }, [])
 
 
+
+    // function mostrarOcultarSenha(){
+    //     var senha = document.getElementById("senha");
+
+    //     if( senha.type === "password"){
+    //         senha.type = "text"
+    //     }else{
+    //         senha.type = "password"
+    //     }
+    // }
+    // onClick={mostrarOcultarSenha()}
+
+
+
+
     const manipuladorEmail = (evento) => {
         setEmail(evento.target.value)
     }
@@ -62,19 +77,22 @@ const LogIn = ({ onLogin }) => {
             <div className="row">
                 <div className="col-12 col-lg-6">
 
-                    <form className="inputsLogin" onSubmit={efetuarLogin}>
+                    <form className="inputsLogin">
                         <div className="form-group mt-3">
                             <label>E-mail:</label>
                             <input className="form-control" type="text" value={email} required onChange={manipuladorEmail} placeholder="example@gmail.com" />
                         </div>
                         <div className="form-group mt-3">
                             <label>Senha:</label>
-                            <input className="form-control" type="password" value={senha} placeholder="Digite sua senha:" required onChange={manipuladorSenha}
-                            />
+                            <div className="input-group">
+                                <input className="form-control inputSenha" id="senha" type="password" value={senha} placeholder="Digite sua senha:" required onChange={manipuladorSenha}/>
+                                <button className="btnSenha" id="btnSenha" ><i class="fas fa-eye"></i></button>
+                            </div>
+                       
                         </div>
-
+                        
                         <div className="form-group  d-flex justify-content-center">
-                            <button className="btn  btn-primary mt-4 block botaoLogin">Entrar</button>
+                            <button onClick={efetuarLogin} className="btn  btn-primary mt-4 block botaoLogin">Entrar</button>
                         </div>
 
                         <div className="form-group  d-flex justify-content-center mt-3">

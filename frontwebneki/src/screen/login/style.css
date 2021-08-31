@@ -5,3 +5,7 @@
 
 .cadastroBtn{text-decoration: none; font-weight: 500; color: rgb(4, 121, 121) ;}
 .cadastroBtn:hover {color: rgb(4, 88, 88);}
+
+.senhaInput{display: flex; align-items: center;}
+.btnSenha{background-color: rgb(4, 121, 121); border: none; width: 40px; opacity: 0.5;}
+.inputSenha{width: 320px;}
