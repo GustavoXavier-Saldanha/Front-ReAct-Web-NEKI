@@ -91,7 +91,7 @@ const HabilidadeEspecificaNaoRelcionada = () => {
                 </div>
             </div>
             <div>
-                <Link to="/habilidades" className="btn mt-3 block">🠔 Voltar para Habilidades </Link>
+                <Link to="/habilidades" className="btn mt-3 block"> 🠔 Voltar para Habilidades </Link>
 
                 {/* <button onClick={() => {
                     excluirHabilidade(habilidade)
