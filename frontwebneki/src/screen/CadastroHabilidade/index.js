@@ -62,22 +62,22 @@ const NovaHabilidade
 
                 <div className="form-group mt-2">
                 <label>Nome</label>
-                <input className="form-control" value={nome} onChange={(e) => setNome(e.target.value)} required />
+                <input className="form-control" placeholder="Nome da Habilidade" value={nome} onChange={(e) => setNome(e.target.value)} required />
             </div>
         
             <div className="form-group mt-2">
                 <label>Descrição</label>
-                <input type="text" value={descricao} onChange={(e) => setDescricao(e.target.value)} className="form-control" />
+                <input type="text" placeholder="Diga mais sobre a Habilidade" value={descricao} onChange={(e) => setDescricao(e.target.value)} className="form-control" />
             </div>
 
             <div className="form-group mt-2">
                 <label>Imagem</label>
-                <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} className="form-control" />
+                <input type="text" placeholder="Uma imagem que represente essa habilidade" value={url} onChange={(e) => setUrl(e.target.value)} className="form-control" />
             </div>
 
 
                 <div className="form-group  d-flex justify-content-center">
-                    <button className="btn  btn-primary mt-4 block botaoLogin">Adicionar</button>
+                    <button className="btn  mt-4 block btnHabilidade">Adicionar</button>
                 </div>
 
 

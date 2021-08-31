@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import http from '../../components/http'
+import MensagemError from '../../components/Mensagens/mensagemError';
 import { useHistory } from "react-router-dom";
 import './style.css'
 
@@ -11,6 +12,8 @@ const LogIn = ({ onLogin }) => {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const history = useHistory();
+
+    const [mensagem, setMensagem] = useState('')
 
     useEffect(() => {
         localStorage.removeItem('token')
@@ -36,8 +39,11 @@ const LogIn = ({ onLogin }) => {
                 history.push('/habilidades')
             }).catch(erro => {
                 console.log(erro)
-               
+                setMensagem('Erro ao logar!')
             })
+        setTimeout(() => {
+            setMensagem('')
+        }, 4000);
 
         setEmail('')
         setSenha('')
@@ -64,6 +70,10 @@ const LogIn = ({ onLogin }) => {
                 <div className="col-12 col-lg-6">
 
                     <form className="inputsLogin">
+                        <div className="form-group ">
+                            {mensagem && <MensagemError msg={mensagem} />}
+                        </div>
+
                         <div className="form-group mt-3">
                             <label>E-mail:</label>
                             <input className="form-control" type="text" value={email} required onChange={manipuladorEmail} placeholder="example@gmail.com" />
@@ -78,7 +88,7 @@ const LogIn = ({ onLogin }) => {
                         </div>
                         
                         <div className="form-group  d-flex justify-content-center">
-                            <button onClick={efetuarLogin} className="btn  btn-primary mt-4 block botaoLogin">Entrar</button>
+                            <button onClick={efetuarLogin} className="btn mt-4 block botaoLogin">Entrar</button>
                         </div>
 
                         <div className="form-group  d-flex justify-content-center mt-3">

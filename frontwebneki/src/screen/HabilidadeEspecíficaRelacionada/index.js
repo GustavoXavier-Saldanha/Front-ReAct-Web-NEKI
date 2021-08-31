@@ -1,4 +1,3 @@
-import './style.css'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import http from '../../components/http'
@@ -75,11 +74,11 @@ const HabilidadeEspecificaRelacionada = () => {
                         </div>
 
                         <div className="btn-group me-2" >
-                            <button onClick={desrelacionar} className="btn btn-dark mt-3 block">Desrelacionar Habilidade</button>
+                            <button onClick={desrelacionar} className="btn btnRelacao mt-3 block">Desrelacionar Habilidade</button>
                         </div>
 
                         <Link className="text-decoration-none  " to={`/editahabilidade/${id}`}>
-                            <button className="btn btn-dark mt-2 block">Editar Habilidade</button>
+                            <button className="btn btnEditar mt-3 block">Editar Habilidade</button>
                         </Link>
                     </div>
                 </div>

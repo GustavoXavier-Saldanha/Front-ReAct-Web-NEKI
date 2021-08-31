@@ -80,12 +80,13 @@ const HabilidadeEspecificaNaoRelcionada = () => {
                         </div>
 
                         <div className="btn-group me-2" >
-                            <button onClick={relacionar} className="btn btn-dark mt-3 block">Relacionar Habilidade</button>
+                            <button onClick={relacionar} className="btn btnRelacao mt-3 block">Relacionar Habilidade</button>
                         </div>
-
-                        <Link className="text-decoration-none  " to={`/editahabilidade/${id}`}>
-                            <button className="btn btn-dark mt-2 block">Editar Habilidade</button>
-                        </Link>
+                        <div className="mt-2">
+                            <Link className="text-decoration-none  " to={`/editahabilidade/${id}`}>
+                                <button className="btn btnEditar mt-3 block">Editar Habilidade</button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

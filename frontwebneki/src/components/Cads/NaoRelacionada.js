@@ -15,7 +15,7 @@ const CardHabilidade = ({ nome, descricao, url, id }) => {
                         </div>
 
                         <Link className="text-decoration-none  " to={`habilidadenaorelacionada/${id}`}>
-                            <button className="btn btn-dark mt-2 block">Ver Mais</button>
+                            <button className="btn block">Ver Mais</button>
                         </Link>
                     </div>
             </div>

@@ -12,7 +12,7 @@ const HabilidadesRelacionadas = () => {
    
     
     useEffect(() => {
-
+        
         const usuarioHabilidade = () => {
 
             http.get(`/habilidade/usuario/${id}`)
@@ -24,7 +24,6 @@ const HabilidadesRelacionadas = () => {
                     console.log(erro)
                 })
         }
-        
         usuarioHabilidade()
     }, [id])
 
@@ -34,7 +33,7 @@ const HabilidadesRelacionadas = () => {
         <div className='tabela mb-5'>
             <h2>Habilidades Relacionadas:</h2>
             <div className="btn-group me-2" role="group" aria-label="Second group">
-                <Link to="/cadastrohabilidade" className="btn btnHabilidade mt-3 block">Adicionar Habilidades</Link>
+                <Link to="/cadastrohabilidade" className="btn btnHome mt-3 block">Adicionar Habilidades</Link>
             </div>
             <div className="container paraAparecer">
             <div className="row RowTelaInicial">

@@ -85,7 +85,7 @@ const EditaHabilidade = () => {
 
 
                 <div className="form-group  d-flex justify-content-center">
-                    <button className="btn  btn-primary mt-4 block botaoLogin">Editar</button>
+                    <button className="btn btnHabilidade mt-4 block ">Editar</button>
                 </div>
 
 

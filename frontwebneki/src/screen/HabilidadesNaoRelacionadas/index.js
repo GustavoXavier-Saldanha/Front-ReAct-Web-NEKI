@@ -32,10 +32,10 @@ const HabilidadesNaoRelacionadas = () => {
     }, [id])
 
     return (
-        <div className='tabela mb-2'>
+        <div className='tabela mb-4'>
             <h2>Habilidades não relacionadas:</h2>
             <div className="btn-group me-2" role="group" aria-label="Second group">
-                <Link to="/cadastrohabilidade" className="btn btnHabilidade mt-2 block">Adicionar Habilidades</Link>
+                <Link to="/cadastrohabilidade" className="btn btnHome mt-2 block">Adicionar Habilidades</Link>
             </div>
             <div className="container paraAparecer">
             <div className="row RowTelaInicial">

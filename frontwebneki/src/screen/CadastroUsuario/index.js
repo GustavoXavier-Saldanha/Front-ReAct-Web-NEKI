@@ -76,8 +76,8 @@ const CadastroUsuario = () => {
                     </div>
 
 
-                    <div className="form-group  d-flex justify-content-center">
-                        <button className="btn  btn-primary mt-4 block botaoLogin">Cadastrar</button>
+                    <div className="form-group d-flex justify-content-center">
+                        <button className="btn mt-4 block botaoLogin">Cadastrar</button>
                     </div>
                     <div className="form-group  d-flex justify-content-center mt-3">
                             <label className="nav-item">
