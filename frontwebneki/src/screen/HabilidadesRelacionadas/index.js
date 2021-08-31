@@ -19,7 +19,7 @@ const HabilidadesRelacionadas = () => {
     const usuarioHabilidade = () => {
         http.get(`usuario/${id}`)
         .then(response => {
-            console.log((response.data))
+            console.log((response.data.habilidades))
             setIdHabilidade(response.data.habilidades)
         })
             .catch(erro => {

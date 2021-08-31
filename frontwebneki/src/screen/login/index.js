@@ -86,7 +86,7 @@ const LogIn = ({ onLogin }) => {
                             <label>Senha:</label>
                             <div className="input-group">
                                 <input className="form-control inputSenha" id="senha" type="password" value={senha} placeholder="Digite sua senha:" required onChange={manipuladorSenha}/>
-                                <button className="btnSenha" id="btnSenha" ><i class="fas fa-eye"></i></button>
+                                <button className="btnSenha" id="btnSenha" ><i className="fas fa-eye"></i></button>
                             </div>
                        
                         </div>
