@@ -3,12 +3,18 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import http from '../../components/http'
 import { Link } from 'react-router-dom'
+import MensagemSucesso from '../../components/Mensagens/mensagemSucces'
+import MensagemError from '../../components/Mensagens/mensagemError';
 
-const HabilidadeEspecifica = () => {
+const HabilidadeEspecificaNaoRelcionada = () => {
 
     const [habilidade, setHabilidade] = useState([])
    
     const idUsuario = localStorage.getItem('idUsuario');
+
+    
+    const [mensagem, setMensagem] = useState('')
+    const [mensagemSucesso, setMensagemSucesso] = useState('')
 
     const { id } = useParams()
 
@@ -35,50 +41,19 @@ const HabilidadeEspecifica = () => {
         }
 
         http.post(`usuario/adiciona/${id}`, usuario)
-        .then(response => {
-            console.log(response.data)
-        })
-        .catch(erro => {
-            console.log('Algo deu errado')
-            console.log(erro)
-        })
+        .then(response => {     
+                setMensagemSucesso('A skill foi adicionada com sucesso!')
+            })
+            .catch(erro => {
+                setMensagem('Erro ao relacionar skill')
+            })
+        setTimeout(() => {
+            setMensagem('')
+        }, 4000);
+        setTimeout(() => {
+            setMensagemSucesso('')
+        }, 4000);
     }
-
-
-    const desrelacionar = () => {
-  
-        const usuario = {
-        id: idUsuario
-        }
-
-        http.post(`usuario/remove/${id}`, usuario)
-        .then(response => {
-            console.log(response.data)
-        })
-        .catch(erro => {
-            console.log('Algo deu errado')
-            console.log(erro)
-        })
-    }
-
-    const nota = () => {
-        if (habilidade != null) {
-            return (
-                <>
-                    <form >
-
-
-                    </form>
-                </>
-            )
-        }
-
-        else{
-
-
-        }
-    }
-
 
     return (
         <div className="tenisEspecifico">
@@ -91,7 +66,7 @@ const HabilidadeEspecifica = () => {
                     </div>
 
                     <div className=" col-12 col-lg-7">
-                        <img src={habilidade.url} className="img-fluid" />
+                        <img src={habilidade.url} alt="Imagem ilustrativa" className="img-fluid" />
                     </div>
 
                     <div className=" col-12 col-lg-4">
@@ -99,11 +74,18 @@ const HabilidadeEspecifica = () => {
                         <h5>{habilidade.descricao}</h5>
                         <h3 className="freteGreen">Opções:</h3>
 
-                        <div className="btn-group me-2" >
-                            <button onClick={() => {
-                               relacionar()
-                            }} className="btn btn-dark mt-3 block">Relacionar Habilidade</button>
+                        <div className="form-group ">
+                            {mensagem && <MensagemError msg={mensagem} />}
+                            {mensagemSucesso && <MensagemSucesso msg={mensagemSucesso} />}
                         </div>
+
+                        <div className="btn-group me-2" >
+                            <button onClick={relacionar} className="btn btn-dark mt-3 block">Relacionar Habilidade</button>
+                        </div>
+
+                        <Link className="text-decoration-none  " to={`/editahabilidade/${id}`}>
+                            <button className="btn btn-dark mt-2 block">Editar Habilidade</button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -118,4 +100,4 @@ const HabilidadeEspecifica = () => {
     )
 }
 
-export default HabilidadeEspecifica
+export default HabilidadeEspecificaNaoRelcionada

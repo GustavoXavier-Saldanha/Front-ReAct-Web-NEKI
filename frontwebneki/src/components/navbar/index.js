@@ -26,7 +26,7 @@ const NavBar = ({ token, aoLogout}) => {
             </li>
 
             <form className="nav-link text-white navtxt" onClick={logout}>
-            <a className="nav-link navtxt" href="#" >
+            <a className="nav-link navtxt" href="/login" >
               Logout
             </a>
           </form>
@@ -52,7 +52,7 @@ const NavBar = ({ token, aoLogout}) => {
     <nav className="navbar navbar-light bg-light justify-content-between navbar-expand-lg ">
       
 
-        <Link className="nav-link text-dark" to="/"><img src={img} /></Link>
+        <Link className="nav-link text-dark" to="/habilidades"><img src={img} alt="Imagem Logo" /></Link>
 
       <div className="form-inline w-75 p-3">
         <div className="navBarHome">

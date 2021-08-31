@@ -6,6 +6,8 @@ import './style.css'
 
 const LogIn = ({ onLogin }) => {
 
+    const [hide, setHide] = useState(false)
+
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const history = useHistory();
@@ -31,7 +33,7 @@ const LogIn = ({ onLogin }) => {
                 localStorage.setItem('email', response.data.email)
                 localStorage.setItem('token', response.data.token)
                 onLogin(response.data.token)
-                history.push('/')
+                history.push('/habilidades')
             }).catch(erro => {
                 console.log(erro)
                
@@ -46,22 +48,6 @@ const LogIn = ({ onLogin }) => {
         console.log(user)
 
     }, [])
-
-
-
-    // function mostrarOcultarSenha(){
-    //     var senha = document.getElementById("senha");
-
-    //     if( senha.type === "password"){
-    //         senha.type = "text"
-    //     }else{
-    //         senha.type = "password"
-    //     }
-    // }
-    // onClick={mostrarOcultarSenha()}
-
-
-
 
     const manipuladorEmail = (evento) => {
         setEmail(evento.target.value)
@@ -85,8 +71,8 @@ const LogIn = ({ onLogin }) => {
                         <div className="form-group mt-3">
                             <label>Senha:</label>
                             <div className="input-group">
-                                <input className="form-control inputSenha" id="senha" type="password" value={senha} placeholder="Digite sua senha:" required onChange={manipuladorSenha}/>
-                                <button className="btnSenha" id="btnSenha" ><i className="fas fa-eye"></i></button>
+                                <input className="form-control inputSenha" id="senha" type={hide ? "text" : "password" } value={senha} placeholder="Digite sua senha:" required onChange={manipuladorSenha}/>
+                                <button className="btnSenha" id="btnSenha" onClick={ () => setHide(hidePassword => !hidePassword)} ><i className={ hide ? "fas fa-eye" : "fas fa-eye-slash"}></i></button>
                             </div>
                        
                         </div>

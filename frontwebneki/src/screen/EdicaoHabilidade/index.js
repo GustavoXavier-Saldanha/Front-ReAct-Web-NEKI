@@ -34,14 +34,14 @@ const EditaHabilidade = () => {
       descricao: descricao,
       url: url
     }
-    http.put('habilidade/' + id, habilidade)
+    http.put('habilidade/atualizar/' + id, habilidade)
       .then(response => {
         console.log(response.data)
-        setMensagemSucesso('Habilidade com sucesso!')
+        setMensagemSucesso('Habilidade editada com sucesso!')
        })
        .catch(erro => {
            console.log('Algo deu errado')
-           setMensagem('Erro ao cadastrar uma nova habilidade!')
+           setMensagem('Erro ao editar a habilidade!')
        })
    setTimeout(() => {
        setMensagem('')
@@ -80,7 +80,7 @@ const EditaHabilidade = () => {
 
                 <div className="form-group mt-2">
                     <label>Imagem</label>
-                    <input type="text" onChange={(e) => setUrl(e.target.value)} className="form-control" />
+                    <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} className="form-control" />
                 </div>
 
 

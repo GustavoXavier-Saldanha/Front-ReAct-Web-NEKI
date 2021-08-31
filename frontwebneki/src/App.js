@@ -7,8 +7,8 @@ import NovaHabilidade from "./screen/CadastroHabilidade"
 import EditaHabilidade from "./screen/EdicaoHabilidade"
 import Login from "./screen/login";
 import Navbar from "./components/navbar/index";
-import HabilidadeEspecifica from "./screen/HabilidadeEspecifica"
-
+import HabilidadeEspecificaNaoRelcionada from "./screen/HabilidadeEspecificaNaoRelacionada"
+import HabilidadeEspecificaRelcionada from "./screen/HabilidadeEspecíficaRelacionada"
 
 function App() {
   const [token, setToken] = useState("");
@@ -51,7 +51,8 @@ function App() {
           <Route exact path="/cadastrousuario">
               <CadastroUsuario />
           </Route>
-          <Route exact path="/editahabilidade">
+          
+          <Route exact path="/editahabilidade/:id">
               <EditaHabilidade />
           </Route>
  
@@ -59,8 +60,11 @@ function App() {
               <NovaHabilidade />
           </Route>
      
-          <Route exact path="/habilidade/:id">
-              <HabilidadeEspecifica />
+          <Route exact path="/habilidaderelacionada/:id">
+              <HabilidadeEspecificaRelcionada />
+          </Route>
+          <Route exact path="/habilidadenaorelacionada/:id">
+              <HabilidadeEspecificaNaoRelcionada />
           </Route>
           <Route>            
               <Pagina404 />
